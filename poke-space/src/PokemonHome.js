@@ -18,11 +18,10 @@ function PokemonHome() {
         });
     };
 
-    //getPokemon();
+    getPokemon();
 
     return (
         <>
-            <Button onClick={getPokemon}>Get Pokemon Data</Button>
             <Container className={ classes.cardGrid } maxWidth="md">
                 {data.map((card) => (
                     <Grid item key={card} xs={12} sm={6} md={4}>
