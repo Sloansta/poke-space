@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Card, CardMedia, CardContent, Typography, Container, Grid, CardActions, Button } from '@material-ui/core';
-import useStyles from './styles';
+import useStyles from '../styles';
 
 function PokemonHome() {
     const [data, setData] = useState([]);
     const classes = useStyles();
     
+    // fetches and fills initial state with pokemon cards
     const getPokemon = () => {
         fetch('https://api.pokemontcg.io/v2/cards')
         .then(res => res.json())
@@ -18,6 +19,7 @@ function PokemonHome() {
         });
     };
 
+    // call
     getPokemon();
 
     return (
@@ -37,7 +39,7 @@ function PokemonHome() {
                                         {card.name}
                                     </Typography>
                                     <Typography>
-                                        {card.types + ' '}
+                                        {card.types.join(', ')}
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
