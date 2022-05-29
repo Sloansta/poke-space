@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   cardMedia: {
-    paddingTop: '56.25%' // 16:9 aspect ratio
+    paddingTop: '405px', // 16:9 aspect ratio
+    position: 'relative',
+    overflow: 'hidden'
   },
 
   cardContent: {
